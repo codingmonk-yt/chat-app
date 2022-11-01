@@ -64,7 +64,7 @@ const DashboardLayout = () => {
   const { onToggleMode } = useSettings();
 
   return (
-    <Stack direction={"row"}>
+   <Stack direction="row">
       <Box
         p={2}
         sx={{
@@ -119,7 +119,13 @@ const DashboardLayout = () => {
                     onClick={() => {
                       setSelected(el.index);
                     }}
-                    sx={{ width: "max-content", color: theme.palette.mode === "light" ? "#000" : theme.palette.text.primary }}
+                    sx={{
+                      width: "max-content",
+                      color:
+                        theme.palette.mode === "light"
+                          ? "#000"
+                          : theme.palette.text.primary,
+                    }}
                     key={el.index}
                   >
                     {el.icon}
@@ -144,7 +150,13 @@ const DashboardLayout = () => {
                   onClick={() => {
                     setSelected(3);
                   }}
-                  sx={{ width: "max-content", color: theme.palette.mode === "light" ? "#000" : theme.palette.text.primary }}
+                  sx={{
+                    width: "max-content",
+                    color:
+                      theme.palette.mode === "light"
+                        ? "#000"
+                        : theme.palette.text.primary,
+                  }}
                 >
                   <Gear />
                 </IconButton>
@@ -165,7 +177,7 @@ const DashboardLayout = () => {
         </Stack>
       </Box>
       <Outlet />
-    </Stack>
+      </Stack>
   );
 };
 
