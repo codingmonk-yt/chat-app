@@ -46,14 +46,17 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 
 const ChatElement = ({ id, name, img, msg, time, unread, online }) => {
-    const theme = useTheme();
+  const theme = useTheme();
   return (
     <Box
       sx={{
         width: "100%",
 
         borderRadius: 1,
-        backgroundColor: theme.palette.mode === "light" ?  "#fff" : theme.palette.background.default ,
+        backgroundColor:
+          theme.palette.mode === "light"
+            ? "#fff"
+            : theme.palette.background.paper,
       }}
       p={2}
     >
@@ -94,7 +97,7 @@ const ChatElement = ({ id, name, img, msg, time, unread, online }) => {
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: 20,
-  backgroundColor: alpha(theme.palette.background.default, 1),
+  backgroundColor: alpha(theme.palette.background.paper, 1),
   marginRight: theme.spacing(2),
   marginLeft: 0,
   width: "100%",
@@ -121,14 +124,17 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const Chats = () => {
-    const theme = useTheme();
+  const theme = useTheme();
   return (
     <Box
       sx={{
         position: "relative",
 
         width: 320,
-        backgroundColor: theme.palette.mode === "light" ? "#F8FAFF" : theme.palette.background.paper,
+        backgroundColor:
+          theme.palette.mode === "light"
+            ? "#F8FAFF"
+            : theme.palette.background.default,
         boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)",
       }}
     >
