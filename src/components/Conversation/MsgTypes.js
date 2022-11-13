@@ -1,7 +1,17 @@
 import React from "react";
-import { Divider, Stack, Typography, Box, Link, IconButton } from "@mui/material";
+import {
+  Divider,
+  Stack,
+  Typography,
+  Box,
+  Link,
+  IconButton,
+  Menu,
+  MenuItem,
+} from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { DownloadSimple, Image } from "phosphor-react";
+import { DownloadSimple, Image, DotsThreeVertical } from "phosphor-react";
+import { Message_options } from "../../data";
 
 const DocMsg = ({ el }) => {
   const theme = useTheme();
@@ -31,13 +41,18 @@ const DocMsg = ({ el }) => {
             <Image size={48} />
             <Typography variant="caption">Abstract.png</Typography>
             <IconButton>
-                <DownloadSimple />
+              <DownloadSimple />
             </IconButton>
           </Stack>
-          <Typography   variant="body2"
-                sx={{ color: el.incoming ? theme.palette.text : "#fff" }} >{el.message}</Typography>
+          <Typography
+            variant="body2"
+            sx={{ color: el.incoming ? theme.palette.text : "#fff" }}
+          >
+            {el.message}
+          </Typography>
         </Stack>
       </Box>
+      <MessageOptions />
     </Stack>
   );
 };
@@ -92,6 +107,7 @@ const LinkMsg = ({ el }) => {
           </Stack>
         </Stack>
       </Box>
+       <MessageOptions />
     </Stack>
   );
 };
@@ -133,6 +149,7 @@ const ReplyMsg = ({ el }) => {
           </Typography>
         </Stack>
       </Box>
+       <MessageOptions />
     </Stack>
   );
 };
@@ -165,6 +182,7 @@ const MediaMsg = ({ el }) => {
           </Typography>
         </Stack>
       </Box>
+      <MessageOptions />
     </Stack>
   );
 };
@@ -190,6 +208,8 @@ const TextMsg = ({ el }) => {
           {el.message}
         </Typography>
       </Box>
+      {/*  */}
+      <MessageOptions />
     </Stack>
   );
 };
@@ -204,6 +224,45 @@ const Timeline = ({ el }) => {
       </Typography>
       <Divider width="46%" />
     </Stack>
+  );
+};
+
+const MessageOptions = () => {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  return (
+    <>
+      <DotsThreeVertical
+        id="basic-button"
+        aria-controls={open ? "basic-menu" : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? "true" : undefined}
+        onClick={handleClick}
+        size={20}
+      />
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          "aria-labelledby": "basic-button",
+        }}
+      >
+        <Stack spacing={1} px={1}>
+          {Message_options.map((el) => (
+            <MenuItem onClick={handleClick}>{el.title}</MenuItem>
+          ))}
+        </Stack>
+      </Menu>
+    </>
   );
 };
 
