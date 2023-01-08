@@ -19,7 +19,7 @@ const Profile_Menu = [
     icon: <Gear />,
   },
   {
-    title: "Logout",
+    title: "Profile",
     icon: <SignOut />,
   },
 ];

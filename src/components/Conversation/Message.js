@@ -43,6 +43,8 @@ const Message = () => {
                   return <TextMsg el={el} />;
               }
 
+              break;
+
             default:
               return <></>;
           }

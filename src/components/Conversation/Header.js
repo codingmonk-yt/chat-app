@@ -11,12 +11,9 @@ import { CaretDown, MagnifyingGlass, Phone, VideoCamera } from "phosphor-react";
 import { useTheme } from "@mui/material/styles";
 import { faker } from "@faker-js/faker";
 import StyledBadge from "../StyledBadge";
-import { ToggleSidebar } from "../../redux/slices/app";
-import { useDispatch } from "react-redux";
 
 const Header = () => {
   const theme = useTheme();
-  const dispatch = useDispatch();
   return (
     <Box
       p={2}
@@ -35,14 +32,7 @@ const Header = () => {
         justifyContent={"space-between"}
         sx={{ width: "100%", height: "100%" }}
       >
-        <Stack
-          onClick={() => {
-            //
-            dispatch(ToggleSidebar());
-          }}
-          direction={"row"}
-          spacing={2}
-        >
+        <Stack direction={"row"} spacing={2}>
           <Box>
             <StyledBadge
               overlap="circular"
