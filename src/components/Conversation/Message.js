@@ -10,7 +10,7 @@ import {
   DocMsg,
 } from "./MsgTypes";
 
-const Message = ({menu}) => {
+const Message = () => {
   return (
     <Box p={3}>
       <Stack spacing={3}>
@@ -18,29 +18,29 @@ const Message = ({menu}) => {
           switch (el.type) {
             case "divider":
               // Timeline
-              return <Timeline el={el}  />;
+              return <Timeline el={el} />;
 
             case "msg":
               switch (el.subtype) {
                 case "img":
                   // img msg
-                  return <MediaMsg el={el} menu={menu} />;
+                  return <MediaMsg el={el} />;
 
                 case "doc":
                   // Doc msg
-                  return <DocMsg el={el} menu={menu} />;
+                  return <DocMsg el={el} />;
 
                 case "link":
                   // Link msg
-                  return <LinkMsg el={el} menu={menu} />;
+                  return <LinkMsg el={el} />;
 
                 case "reply":
                   //reply msg
-                  return <ReplyMsg el={el} menu={menu} />;
+                  return <ReplyMsg el={el} />;
 
                 default:
                   // text msg
-                  return <TextMsg el={el} menu={menu} />;
+                  return <TextMsg el={el} />;
               }
 
             default:

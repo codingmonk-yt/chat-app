@@ -12,7 +12,7 @@ const Conversation = () => {
       <Header />
       {/* Msg */}
       <Box width={"100%"} sx={{ flexGrow: 1, height: "100%", overflowY: "scroll" }}>
-        <Message menu={true} />
+        <Message />
       </Box>
       {/* Chat Footer */}
       <Footer />
