@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Box,
   IconButton,
@@ -8,21 +9,7 @@ import {
   Divider,
 } from "@mui/material";
 import { ArchiveBox, CircleDashed, MagnifyingGlass } from "phosphor-react";
-import React from "react";
 import { styled, alpha } from "@mui/material/styles";
-
-const ChatElement = () => {
-  return (
-    <Box
-      sx={{
-        width: "100%",
-        height: 60,
-        borderRadius: 1,
-        backgroundColor: "#fff",
-      }}
-    ></Box>
-  );
-};
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -45,9 +32,9 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
-  "& .MultiInputBase-input": {
+  "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
-    //vertical padding + front size from searchIcon
+    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     width: "100%",
   },
@@ -64,37 +51,34 @@ const Chats = () => {
         boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)",
       }}
     >
-      <Stack p={3} spacing={2}>
+      <Stack p={3} spacing={1.5}>
         <Stack
-          direction={"row"}
-          alignItems={"center"}
-          justifyContent={"space-between"}
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
         >
           <Typography variant="h5">Chats</Typography>
           <IconButton>
             <CircleDashed />
           </IconButton>
         </Stack>
-        <Stack sx={{ width: "100%" }} direction={"row"}>
+        <Stack sx={{ width: "100%" }}>
           <Search>
             <SearchIconWrapper>
               <MagnifyingGlass color="#709CE6" />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="search..."
+              placeholder="Seach..."
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
         </Stack>
-        <Stack spacing={1}>
-          <Stack direction="row" alignItems={"center"} spacing={1.5}>
+        <Stack spacing={1.5}>
+          <Stack direction={"row"} alignItems={"center"} spacing={1.5}>
             <ArchiveBox size={24} />
             <Button>Archive</Button>
           </Stack>
           <Divider />
-        </Stack>
-        <Stack direction="column">
-          <ChatElement />
         </Stack>
       </Stack>
     </Box>
