@@ -43,10 +43,11 @@ const Chats = () => {
         boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)",
       }}
     >
-      <Stack p={1} width>
+      <Stack p={3} spacing={2}>
         <Stack
           direction={"row"}
-          sx={{ justifyContent: "space-between", alignItems: "center" }}
+          alignItems={"center"}
+          justifyContent={"space-between"}
         >
           <Typography variant="h5">Chats</Typography>
           <IconButton>
@@ -58,7 +59,10 @@ const Chats = () => {
             <SearchIconWrapper>
               <MagnifyingGlass color="#709CE6" />
             </SearchIconWrapper>
-            <StyledInputBase placeholder="search" />
+            <StyledInputBase
+              placeholder="search..."
+              inputProps={{ "aria-label": "search" }}
+            />
           </Search>
         </Stack>
       </Stack>
