@@ -63,6 +63,7 @@ const ChatElement = ({ id, name, img, msg, time, unread, online }) => {
         direction="row"
         alignItems={"center"}
         justifyContent={"space-between"}
+        spacing={1}
       >
         <Stack direction={"row"} spacing={2}>
           {online ? (
@@ -169,24 +170,24 @@ const Chats = () => {
           spacing={1.5}
           sx={{ flexGrow: 1, overflow: "scroll", height: "100%" }}
         >
-          <SimpleBarStyle timeout={500} clickOnTrack={false}>
-            <Stack spacing={1.5}>
-              <Typography variant="subtitle2" sx={{ color: "676767" }}>
-                Pinned
-              </Typography>
-              {ChatList.filter((el) => el.pinned).map((el) => {
-                return <ChatElement {...el} />;
-              })}
-            </Stack>
-            <Stack spacing={1.5}>
-              <Typography variant="subtitle2" sx={{ color: "676767" }}>
-                All chats
-              </Typography>
-              {ChatList.filter((el) => !el.pinned).map((el) => {
-                return <ChatElement {...el} />;
-              })}
-            </Stack>
-          </SimpleBarStyle>
+          {/* <SimpleBarStyle timeout={500} clickOnTrack={false}> */}
+          <Stack spacing={1.5}>
+            <Typography variant="subtitle2" sx={{ color: "676767" }}>
+              Pinned
+            </Typography>
+            {ChatList.filter((el) => el.pinned).map((el) => {
+              return <ChatElement {...el} />;
+            })}
+          </Stack>
+          <Stack spacing={1.5}>
+            <Typography variant="subtitle2" sx={{ color: "676767" }}>
+              All chats
+            </Typography>
+            {ChatList.filter((el) => !el.pinned).map((el) => {
+              return <ChatElement {...el} />;
+            })}
+          </Stack>
+          {/* </SimpleBarStyle> */}
         </Stack>
       </Stack>
     </Box>
