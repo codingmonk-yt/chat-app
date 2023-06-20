@@ -14,7 +14,8 @@ import { ArchiveBox, CircleDashed, MagnifyingGlass } from "phosphor-react";
 import { styled, alpha, useTheme } from "@mui/material/styles";
 import { faker } from "@faker-js/faker";
 import { ChatList } from "../../data";
-import { SimpleBarStyle } from "../../components/Scrollbar";
+// import { SimpleBarStyle } from "../../components/Scrollbar";
+import "../../styles/global styles.css";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -168,25 +169,27 @@ const Chats = () => {
         <Stack
           direction="column"
           spacing={1.5}
-          sx={{ flexGrow: 1, overflow: "scroll", height: "100%" }}
+          sx={{ flexGrow: 1, overflow: "hidden", height: "100%" }}
         >
           {/* <SimpleBarStyle timeout={500} clickOnTrack={false}> */}
-          <Stack spacing={1.5}>
-            <Typography variant="subtitle2" sx={{ color: "676767" }}>
-              Pinned
-            </Typography>
-            {ChatList.filter((el) => el.pinned).map((el) => {
-              return <ChatElement {...el} />;
-            })}
-          </Stack>
-          <Stack spacing={1.5}>
-            <Typography variant="subtitle2" sx={{ color: "676767" }}>
-              All chats
-            </Typography>
-            {ChatList.filter((el) => !el.pinned).map((el) => {
-              return <ChatElement {...el} />;
-            })}
-          </Stack>
+          <div className="scrollbar" style={{ overflowY: "auto" }}>
+            <Stack spacing={1.5}>
+              <Typography variant="subtitle2" sx={{ color: "676767" }}>
+                Pinned
+              </Typography>
+              {ChatList.filter((el) => el.pinned).map((el) => {
+                return <ChatElement {...el} />;
+              })}
+            </Stack>
+            <Stack spacing={1.5}>
+              <Typography variant="subtitle2" sx={{ color: "676767" }}>
+                All chats
+              </Typography>
+              {ChatList.filter((el) => !el.pinned).map((el) => {
+                return <ChatElement {...el} />;
+              })}
+            </Stack>
+          </div>
           {/* </SimpleBarStyle> */}
         </Stack>
       </Stack>
