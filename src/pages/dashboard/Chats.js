@@ -148,6 +148,7 @@ const Chats = () => {
             <CircleDashed />
           </IconButton>
         </Stack>
+
         <Stack sx={{ width: "100%" }}>
           <Search>
             <SearchIconWrapper>
@@ -159,6 +160,7 @@ const Chats = () => {
             />
           </Search>
         </Stack>
+
         <Stack spacing={1.5}>
           <Stack direction={"row"} alignItems={"center"} spacing={1.5}>
             <ArchiveBox size={24} />
@@ -166,28 +168,32 @@ const Chats = () => {
           </Stack>
           <Divider />
         </Stack>
+
         <Stack
           direction="column"
-          spacing={1.5}
+          // spacing={1.5}
           sx={{ flexGrow: 1, overflow: "hidden", height: "100%" }}
         >
-          {/* <SimpleBarStyle timeout={500} clickOnTrack={false}> */}
           <div className="scrollbar" style={{ overflowY: "auto" }}>
+            {/* <SimpleBarStyle timeout={500} clickOnTrack={false}> */}
             <Stack spacing={1.5}>
-              <Typography variant="subtitle2" sx={{ color: "676767" }}>
-                Pinned
-              </Typography>
-              {ChatList.filter((el) => el.pinned).map((el) => {
-                return <ChatElement {...el} />;
-              })}
-            </Stack>
-            <Stack spacing={1.5}>
-              <Typography variant="subtitle2" sx={{ color: "676767" }}>
-                All chats
-              </Typography>
-              {ChatList.filter((el) => !el.pinned).map((el) => {
-                return <ChatElement {...el} />;
-              })}
+              <Stack spacing={1.5}>
+                <Typography variant="subtitle2" sx={{ color: "676767" }}>
+                  Pinned
+                </Typography>
+                {ChatList.filter((el) => el.pinned).map((el) => {
+                  return <ChatElement {...el} />;
+                })}
+              </Stack>
+
+              <Stack spacing={1.5}>
+                <Typography variant="subtitle2" sx={{ color: "676767" }}>
+                  All chats
+                </Typography>
+                {ChatList.filter((el) => !el.pinned).map((el) => {
+                  return <ChatElement {...el} />;
+                })}
+              </Stack>
             </Stack>
           </div>
           {/* </SimpleBarStyle> */}
