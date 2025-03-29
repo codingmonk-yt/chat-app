@@ -2,14 +2,14 @@
 import { enUS, frFR, zhCN, viVN, arSD } from '@mui/material/locale';
 
 // routes
-import { PATH_DASHBOARD } from "./routes/paths";
+import { PATH_DASHBOARD } from './routes/paths';
 
 export const defaultSettings = {
-  themeMode: "light",
-  themeDirection: "ltr",
-  themeContrast: "default",
-  themeLayout: "horizontal",
-  themeColorPresets: "default",
+  themeMode: 'light',
+  themeDirection: 'ltr',
+  themeContrast: 'default',
+  themeLayout: 'horizontal',
+  themeColorPresets: 'default',
   themeStretch: false,
 };
 
@@ -58,7 +58,8 @@ export const allLangs = [
 
 export const defaultLang = allLangs[0]; // English
 
+export const BASE_URL = 'http://localhost:3005';
 
-
+export const IS_AUTHENTICATED = false;
 // DEFAULT ROOT PATH
 export const DEFAULT_PATH = PATH_DASHBOARD.general.app; // as '/app'

@@ -1,0 +1,29 @@
+/* Customize the scrollbar track */
+::-webkit-scrollbar {
+  width: 5px; /* Set the width of the scrollbar */
+}
+
+::-webkit-scrollbar:hover {
+  width: 5px; /* Set the width of the scrollbar */
+}
+
+/* Customize the scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Change the color of the thumb */
+  border-radius: 5px; /* Add rounded corners to the thumb */
+}
+
+/* Customize the scrollbar track on hover */
+::-webkit-scrollbar:hover {
+  width: 10px; /* Change the width on hover */
+}
+
+/* Customize the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #777; /* Change the color on hover */
+}
+
+/* Customize the scrollbar corner (the intersection of the vertical and horizontal scrollbars) */
+::-webkit-scrollbar-corner {
+  background-color: #333; /* Change the color of the corner */
+}
